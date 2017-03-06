@@ -19,8 +19,14 @@ def main():
             print("Your PIN is correct")
             return True
         else:
-            print("Your PIN is incorrect")
-            attempts += 1
-        print("Your bank catd is blocked")
-        return False
+            if pin.isnumeric() == True:
+                print("Your PIN is incorrect")
+                attempts += 1
+            else:
+                print("Invalid PIN character")
+                attempts += 1
+                if attempts == 3:
+                    print("Your bank card is blocked")
+                    return False
+    
 main()

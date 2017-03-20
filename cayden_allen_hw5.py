@@ -15,6 +15,18 @@ def verify(pin):
         return False
 
 
+def block():
+
+    """
+    Displays a block message when the user has entered the PIN
+    incorerectly 3 times and will exit the program with exit code 1
+    """
+
+    print("Your bank card is blocked") 
+    exit(1)
+    
+
+
 def GetInput():
     """
     Checks if PIN was correct or not. Loops through until PIN is correct
@@ -36,21 +48,18 @@ def GetInput():
                 print("Invalid PIN length. Correct format is: <9876>")
                 attempts += 1
                 if attempts == 3:
-                    print("Your bank card is blocked")
-                    exit(1)
+                    block()
+                    
             elif pin.isnumeric() == True:
                 print("Your PIN is incorrect")
                 attempts += 1
                 if attempts == 3:
-                    print("Your bank card is blocked")
-                    exit(1)
+                    block()
             else:
                 print("Invalid PIN character. Correct format is: <9876>")
                 attempts += 1
                 if attempts == 3:
-                    print("Your bank card is blocked")
-                    exit(1)
-
+                    block()
 def main():
     if __name__ == '__main__':
         GetInput()

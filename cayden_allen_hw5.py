@@ -37,19 +37,19 @@ def GetInput():
                 attempts += 1
                 if attempts == 3:
                     print("Your bank card is blocked")
-                    return False
+                    exit(1)
             elif pin.isnumeric() == True:
                 print("Your PIN is incorrect")
                 attempts += 1
                 if attempts == 3:
                     print("Your bank card is blocked")
-                    return False
+                    exit(1)
             else:
                 print("Invalid PIN character. Correct format is: <9876>")
                 attempts += 1
                 if attempts == 3:
                     print("Your bank card is blocked")
-                    return False
+                    exit(1)
 
 def main():
     if __name__ == '__main__':
